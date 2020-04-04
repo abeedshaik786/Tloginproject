@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% extends 'tapp/base.html' %}
+{%load staticfiles%}
+   {% block body_block %}
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Student Login Form </title>
+
+    <!-- Icons font CSS-->
+    <link href="{% static "vendor/mdi/css/material-design-iconic-font.min.css" %}" rel="stylesheet" media="all">
+    <link href="{% static "vendor/font/css/font-awesome.min.css" %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static "vendor/select3/select2.min.css" %}" rel="stylesheet" media="all">
+    <link href="{% static "vendor/date/daterangepicker.css" %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static "css/c1.css" %}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Student Login</h2>
+                    <div class="message"  role="alert">
+                      {% for message in messages %}
+                      <p style="color:red; padding-bottom: 2px; font-size:20px;">{{message}}</p>
+                      {% endfor %}
+                    </div>
+                    <form method="POST">
+                      	{% csrf_token %}
+                        <!--<div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Studentname" name="studentname" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Rollnumber" name="rollnumber" required>
+                        </div>-->
+                        <div class="input-group">
+                            <input class="input--style-1" type="email" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="password" placeholder="Password" name="password" required>
+                        </div>
+
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--green" type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static "vendor/j2/jquery.min.js" %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% static "vendor/select3/select2.min.js" %}"></script>
+    <script src="{% static "vendor/date/moment.min.js" %}"></script>
+    <script src="{% static "vendor/date/daterangepicker.js" %}"></script>
+
+    <!-- Main JS-->
+    <script src="{% static "js/g1.js" %}"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+{% endblock %}
+<!-- end document-->
